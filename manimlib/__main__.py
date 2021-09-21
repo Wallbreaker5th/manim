@@ -3,6 +3,7 @@ import manimlib.config
 import manimlib.extract_scene
 import manimlib.utils.init_config
 
+import sys
 
 def main():
     args = manimlib.config.parse_cli()
@@ -11,6 +12,9 @@ def main():
         manimlib.utils.init_config.init_customization()
     else:
         config = manimlib.config.get_configuration(args)
+        for i in config["add_path"]:
+            sys.path.append(i)
+
         scenes = manimlib.extract_scene.main(config)
 
         for scene in scenes:

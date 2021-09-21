@@ -252,6 +252,7 @@ def get_configuration(args):
         "preview": not write_file,
         "end_at_animation_number": None,
         "leave_progress_bars": args.leave_progress_bars,
+        "add_path": custom_config["directories"]["add_path"],
     }
 
     # Camera configuration
